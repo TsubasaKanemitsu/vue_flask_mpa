@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello World!!!</h1>
+    <!-- 宣言的レンダリング -->
+    <div id="app">
+        [[message]]
+    </div>
+
+    <div id="example">
+        [[message]]
+    </div>
+
+
+    <!-- v-bindつけるときと，つけないときの差はなになのか? -->
+    <div id="app-2">
+        <span v-bind:title="message">
+            Hover your mouse over me for a few seconds
+            to see my dynamically bound title!
+        </span>
+    </div>
+
+    <!-- 条件分岐 -->
+    <div id="app-3">
+        <span v-if="seen">Now you see me</span>
+    </div>
+
+    <!-- ループ -->
+    <!-- わからんから聞く -->
+    <div id="app-4">
+        <ol>
+            <li v-for="todo in todos">
+                [[todo.text]]
+            </li>
+        </ol>
+    </div>
+
+    <!-- ユーザ入力の制御 -->
+    <!-- ボタン -->
+    <div id="app-5">
+        <p>[[message]]</p>
+        <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+    <!-- インプット -->
+    <div id="app-6">
+        <p>[[message]]</p>
+        <input v-model="message">
+    </div>
+
+    <!-- コンポーネントによる構成 -->
+    <div id="app-7">
+        <ol>
+            <todo-item
+                v-for="item in groceryList"
+                v-bind:todo="item"
+                v-bind:key="item.id"
+            ></todo-item>
+        </ol>
+    </div>
+
+    <div id="obj">
+        <p>[[foo]]</p>
+        <button v-on:click="foo='baz'">Change it</button>
+    </div>
+
+    <div id="lifecycle">lifecycle</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script type="text/javascript" src="./static/js/index.js"></script>
+
+</body>
+</html>
