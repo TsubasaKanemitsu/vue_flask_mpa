@@ -11,6 +11,11 @@ def index():
 
     return render_template('index.html')
 
+@app.route('/ex1')
+def ex1():
+
+    return render_template('ex1.html')
+
 @app.route('/test')
 def test():
     num1 = request.args.get('num1', type=int)
